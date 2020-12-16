@@ -15,3 +15,6 @@ def start(request):
 def results(request):
     return render(request, 'results.html')
     # return HttpResponse("This is the movie you should watch!") 
+
+def submit_form(request):
+    return render(request, 'submit-form.html')
