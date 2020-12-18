@@ -19,7 +19,7 @@ def results(request):
 
 def submit_form(request):
     if request.method == "POST":
-        genre = request.POST.get('genre')
+        genre = request.POST.getlist('genre')
         Release_year = request.POST.get('Release_year')
         rating = request.POST.get('rating')
         cast = request.POST.get('cast')

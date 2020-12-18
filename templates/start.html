@@ -7,80 +7,80 @@
 {% csrf_token %}
 <h1 style="padding-left : 6px">Genres</h1>
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Action" id="inlineCheckbox1" value="Action">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox1" value="Action">
   <label class="form-check-label" for="inlineCheckbox1">Action</label>
 </div>
  
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Adventure" id="inlineCheckbox1" value="Adventure">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox1" value="Adventure">
   <label class="form-check-label" for="inlineCheckbox1">Adventure</label>
 </div>
   
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Animation" id="inlineCheckbox3" value="Animation">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox3" value="Animation">
   <label class="form-check-label" for="inlineCheckbox3">Animation</label>
 </div><br>
 
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Comedy" id="inlineCheckbox4" value="Comedy">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox4" value="Comedy">
   <label class="form-check-label" for="inlineCheckbox4">Comedy</label>
 </div>
   
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Crime" id="inlineCheckbox5" value="Crime">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox5" value="Crime">
   <label class="form-check-label" for="inlineCheckbox5">Crime</label>
 </div>
   
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Drama" id="inlineCheckbox6" value="Drama">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox6" value="Drama">
   <label class="form-check-label" for="inlineCheckbox6">Drama</label>
 </div><br>
 
 
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Fantasy" id="inlineCheckbox7" value="Fantasy">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox7" value="Fantasy">
   <label class="form-check-label" for="inlineCheckbox7">Fantasy</label>
 </div>
  
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Historical" id="inlineCheckbox8" value="Historical">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox8" value="Historical">
   <label class="form-check-label" for="inlineCheckbox8">Historical</label>
 </div>
   
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Horror" id="inlineCheckbox9" value="Horror">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox9" value="Horror">
   <label class="form-check-label" for="inlineCheckbox9">Horror</label>
 </div>
 <br>
 
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Romance" id="inlineCheckbox10" value="Romance">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox10" value="Romance">
   <label class="form-check-label" for="inlineCheckbox10">Romance</label>
 </div>
   
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Sci-Fi" id="inlineCheckbox11" value="Sci-Fi">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox11" value="Sci-Fi">
   <label class="form-check-label" for="inlineCheckbox11">Sci-Fi</label>
 </div>
   
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Tragedy" id="inlineCheckbox12" value="Tragedy">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox12" value="Tragedy">
   <label class="form-check-label" for="inlineCheckbox12">Tragedy</label>
 </div>
 <br>
 
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Musical" id="inlineCheckbox13" value="Musical">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox13" value="Musical">
   <label class="form-check-label" for="inlineCheckbox13">Musical</label>
 </div>
  
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Erotic" id="inlineCheoption14" value="Erotic">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheoption14" value="Erotic">
   <label class="form-check-label" for="inlineCheckbox14">Erotic</label>
 </div>
   
 <div class="form-check- form-check-inline" style="width: 140px">
-  <input class="form-check-input" type="checkbox" name="Thriller" id="inlineCheckbox15" value="Thriller">
+  <input class="form-check-input" type="checkbox" name="genre" id="inlineCheckbox15" value="Thriller">
   <label class="form-check-label" for="inlineCheckbox15">Thriller</label>
 </div>
 <br>
@@ -100,7 +100,7 @@
 <p>Drag the slider to display the rating.</p>
 
 <div class="slidecontainer" style="width: 500px; padding-left: 8px">
-<input type="range" min="1" max="10" value="5" class="slider" name="Rating" id="myRange">
+<input type="range" min="1" max="10" value="5" class="slider" name="rating" id="myRange">
 <p>Rating: <span id="demo"></span></p>
 </div>
 <h1 style="padding-left : 6px">Cast</h1>
