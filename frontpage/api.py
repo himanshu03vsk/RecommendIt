@@ -1,4 +1,4 @@
-from models import Submit
+from frontpage.models import Submit
 import os
 import requests
 from dotenv import load_dotenv
@@ -14,42 +14,39 @@ class movie(object):
     """
     docstring
     """
-        def api_engine():
+    def api_engine(self):
         """This Function will send the fields required for
-        recommendation"""
-        ins = Submit.objects.all()[-1]
+        recommendation"""'''
+        con = sqlite3.connect('db.sqlite3')
+        cur = con.cursor()
+    
+        last_row = cur.execute("SELECT * FROM table ORDER BY id DESC LIMIT 1")'''
+        last_row = len(Submit.objects.all()) - 1
+        ins = Submit.objects.all()[last_row]
         genres = ins.genre
         rating = ins.rating
         release_year = ins.Release_year
-        actors = ins.cast
+        #actors = last_row.cast
+        #Submit.objects.all().delete()
         url = 'https://api.themoviedb.org/3/discover/movie'
-        params = {'language':'en','region':'','primary_release_year':'','with_cast':'','with_genres':[],'':'','':'','':'','':'' }
+        params = {'api_key':TOKEN, 'language':'en','primary_release_year':release_year,'with_genres':genres, 'vote_average.gte':rating,'sort_by': 'popularity.desc'}
+
         r = requests.get(url, params=params)
+        title = []
+        genre = []
+        rating = []
+        year = []
+        summary = []
         if r.status_code == 200:
-            response = dict(r.json)
-            movie_title = response["results"][sr_no]["original_title"]
-            movie_genre = response["results"][sr_no]["genre_ids"]
-            movie_rating = response["results"][sr_no]["vote_average"] 
-            movie_year = response["results"][sr_no]["release_date"][0:4]
-            movie_summary = response["results"][sr_no]["overview"]
-        return movie_title, movie_genre, movie_rating, movie_year, movie_summary
-
-    
-    pass
-
-
-    
-    
-
-
-
-
-
-def api_recieve():
-    """
-    This function will recieve the movies from movie api
-    """
-    pass
-
-
-movie_title, movie_genre, movie_rating, movie_year, movie_summary = api_engine()
+            response = r.json()
+            no_of_movies = len(response["results"])
+            
+            for mov in range(no_of_movies):
+                title.append(response["results"][mov]["original_title"])
+                genre.append(response["results"][mov]["genre_ids"])
+                rating.append(response["results"][mov]["vote_average"])
+                year.append(response["results"][mov]["release_date"][0:4])
+                summary.append(response["results"][mov]["overview"])
+            return title, genre, rating, year, summary, no_of_movies
+        else:
+            return -1
