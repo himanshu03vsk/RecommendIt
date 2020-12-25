@@ -3,22 +3,22 @@
 
 {% block title %} Results
 {% endblock title %}
-
 {% block body %}
-<h2>i got executed<h2>
-{% for i in {{no_of_movies %}
-<h2>i got executed<h2>
-<div class="card mb-3-{{i}}" style="max-width: 540px;">
+<h2 class="display-4" style="padding-left:1%">Based on your preferences, these are the results we found!</h2>
+{% load list_index %}
+{% for i in no_of_movies %}
+
+<div class="card mb-3-{{i}}">
   <div class="row no-gutters-{{i}}">
-    <div class="col-md-4">
-      <img src="..." class="card-img" alt="...">
+    <div class="col-md-4" style = "padding-top: 1%; padding-left:2%" >
+      <img src="{{album|index:i}}" class="img-thumbnail card-img" alt="{{title|index:i}}" style="object-fit: cover">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title-{{i}}">{{movie_title.i}}</h5>
-        <p class="card-text-{{i}}">{{movie_summary.i}}</p>
-        <p class="card-text-{{i}}"><small class="text-muted">{{movie_genre.i}}</small></p>
-        <p class="card-text-{{i}}"><small class="text-muted">{{movie_rating.i}}/10</small></p>
+        <h5 class="card-title-{{i}}">{{title|index:i}}</h5>
+        <p class="card-text-{{i}}">{{summary|index:i}}</p>
+        <p class="card-text-{{i}}">Genres : <small class="text-muted">{{genre|index:i|nested_list}}</small>  Rating : <small class="text-muted">{{rating|index:i}}/10</small></p>
+        {% comment %} <p class="card-text-{{i}}"><small class="text-muted">{{rating|index:i}}/10</small></p> {% endcomment %}
       </div>
     </div>
   </div>
@@ -26,5 +26,14 @@
 {% endfor %}
 
 {% endblock body %}
+{% comment %} 
+{% block body %}
+{% load list_index %}
+{% for i in no_of_movies %}
+      <h5>{{title|index:i}}</h5><br>
+      {{summary|index:i}}<br>
+      {{genre|index:i}}<br>
+        <h4>{{rating|index:i}}/10</small></p></h4><br>
+{% endfor %}
 
-
+{% endblock body %} {% endcomment %}
